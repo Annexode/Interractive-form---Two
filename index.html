@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/output.css" />
+    <title>Annexode the cODEr | Interactive rating component</title>
+  </head>
+  <body>
+    <div
+      data-js-container
+      class="flex justify-center flex-col items-center h-screen gap-1"
+    >
+      <!-- Rating start -->
+      <div
+        class="w-[290px] h-[300px] bg-darkblue-0 p-5 rounded-3xl absolute z-10"
+      >
+        <div
+          class="bg-zinc-700 w-7 h-7 flex justify-center items-center rounded-full"
+        >
+          <img class="w-2" src="./images/icon-star.svg" alt="" />
+        </div>
+        <div class="text-white mt-3 font-medium text-xl">
+          <h1>How did we do?</h1>
+        </div>
+        <div class="text-gray-300 text-xs mt-4 font-normal">
+          <p class="leading-5">
+            Please let us know how we did with your support request. All
+            feedback is appreciated to help us improve our offering!
+          </p>
+        </div>
+
+        <form data-js-form>
+          <div class=" flex justify-between mt-4" id="review-inputs">
+            <label class="radio-input" id="input-label"
+              ><input id="sr-only"
+                class="  absolute w-[1px] h-[1px] p-[0px] -m[1px] overflow-hidden whitespace-nowrap border-0"
+                type="radio"
+                name="rating"
+                value="1"
+              /><span id="control" onclick="changeColor()"
+                class="flex hover:bg-orange-0 hover:text-white text-white justify-center items-center w-9 h-9 rounded-full text-[12px] font-medium bg-zinc-700 place-content-center"
+                >1
+                <span id="sr-only"
+                  class="absolute w-[1px] h-[1px] p-[0px] -m[1px] overflow-hidden whitespace-nowrap border-0"
+                  >star</span
+                ></span
+              ></label
+            >
+            <label
+              ><input
+                class="absolute w-[1px] h-[1px] p-[0px] -m[1px] overflow-hidden whitespace-nowrap border-0"
+                type="radio"
+                name="rating"
+                value="2"
+              /><span
+                class="flex hover:bg-orange-0 hover:text-white text-white justify-center items-center w-9 h-9 rounded-full text-[12px] font-medium bg-zinc-700 place-content-center"
+                >2
+                <span
+                  class="absolute w-[1px] h-[1px] p-[0px] -m[1px] overflow-hidden whitespace-nowrap border-0"
+                  >stars</span
+                ></span
+              ></label
+            >
+            <label
+              ><input
+                class="absolute w-[1px] h-[1px] p-[0px] -m[1px] overflow-hidden whitespace-nowrap border-0"
+                type="radio"
+                name="rating"
+                value="3"
+              /><span
+                class="flex hover:bg-orange-0 hover:text-white text-white justify-center items-center w-9 h-9 rounded-full text-[12px] font-medium bg-zinc-700 place-content-center"
+                >3
+                <span
+                  class="absolute w-[1px] h-[1px] p-[0px] -m[1px] overflow-hidden whitespace-nowrap border-0"
+                  >stars</span
+                ></span
+              ></label
+            >
+            <label
+              ><input
+                class="absolute w-[1px] h-[1px] p-[0px] -m[1px] overflow-hidden whitespace-nowrap border-0"
+                type="radio"
+                name="rating"
+                value="4"
+              /><span
+                class="flex hover:bg-orange-0 hover:text-white text-white justify-center items-center w-9 h-9 rounded-full text-[12px] font-medium bg-zinc-700 place-content-center"
+                >4
+                <span
+                  class="absolute w-[1px] h-[1px] p-[0px] -m[1px] overflow-hidden whitespace-nowrap border-0"
+                  >stars</span
+                ></span
+              ></label
+            >
+            <label
+              ><input
+                class="absolute w-[1px] h-[1px] p-[0px] -m[1px] overflow-hidden whitespace-nowrap border-0"
+                type="radio"
+                name="rating"
+                value="5"
+              /><span
+                class="flex hover:bg-orange-0 hover:text-white text-white justify-center items-center w-9 h-9 rounded-full text-[12px] font-medium bg-zinc-700 place-content-center"
+                >5
+                <span
+                  class="absolute w-[1px] h-[1px] p-[0px] -m[1px] overflow-hidden whitespace-nowrap border-0"
+                  >stars</span
+                ></span
+              ></label
+            >
+          </div>
+          <button
+            class="bg-orange-0 border-0 text-white uppercase h-[45px] w-full cursor-pointer rounded-3xl font-semibold tracking-[2px] mt-4 hover:bg-white hover:text-orange-0"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+      <!-- Rating  end -->
+
+      <!-- Thank you page start -->
+      <section data-js-section class="absolute ">
+        <div
+          id="thankYou-page"
+          class="w-[290px] h-[300px] bg-darkblue-0 p-5 flex flex-col justify-center items-center rounded-3xl"
+        >
+          <div class="w-28">
+            <img src="./images/illustration-thank-you.svg" alt="" />
+          </div>
+          <div
+            class="text-orange-0 font-normal text-[10px] bg-gray-700 mt-4 pt-1 pb-1 pr-3 pl-3 rounded-2xl mb-5"
+          >
+            <h1>You selected {{ rating }} out of 5</h1>
+          </div>
+          <div class="text-white text-xl font-medium"><h1>Thank you!</h1></div>
+          <div class="text-gray-300 mt-3">
+            <p class="text-center leading-4 text-[11px]">
+              We appreciate you taking the time to give a rating. If you ever
+              need more support, don't hesitate to get in touch!
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Thank you page end -->
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
